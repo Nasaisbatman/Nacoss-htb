@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Challenges - Nacoss HTB Tournament</title>
+  <style>
+    body {
+      background-color: #0f0f0f;
+      color: #00ffea;
+      font-family: monospace;
+      text-align: center;
+      margin-top: 30px;
+      overflow: hidden;
+    }
+    .challenge {
+      margin: 20px;
+      padding: 20px;
+      border: 1px solid #00ffea;
+      border-radius: 10px;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      background: rgba(0, 255, 234, 0.1);
+      box-shadow: 0 0 10px rgba(0, 255, 234, 0.3);
+    }
+    a {
+      color: #00ffea;
+      display: block;
+      margin-top: 20px;
+      text-decoration: none;
+      font-size: 18px;
+      transition: all 0.3s;
+    }
+    a:hover {
+      text-shadow: 0 0 10px #00ffea, 0 0 20px #00ffea;
+    }
+    h1, h2 {
+      text-shadow: 0 0 10px #00ffea, 0 0 20px #00ffea;
+    }
+    @keyframes glitch {
+      0% { text-shadow: 2px 2px 0px #00ffea, -2px -2px 0px #00ffea; }
+      20% { text-shadow: 2px 2px 0px #00ffea, -2px -2px 0px #00ffea; }
+      40% { text-shadow: 5px 5px 0px #00ffea, -5px -5px 0px #00ffea; }
+      60% { text-shadow: -2px -2px 0px #00ffea, 2px 2px 0px #00ffea; }
+      80% { text-shadow: 5px 5px 0px #00ffea, -5px -5px 0px #00ffea; }
+      100% { text-shadow: 2px 2px 0px #00ffea, -2px -2px 0px #00ffea; }
+    }
+    .glitch {
+      animation: glitch 1s infinite linear alternate-reverse;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="glitch">🧠 Nacoss Hack The Box Tournament</h1>
+  
+  <div class="challenge">
+    <h2>Challenge 1: Find the Hidden Flag</h2>
+    <p>There's a secret hidden inside the website... Can you find it?</p>
+    <p><strong>Points:</strong> 50</p>
+    <a href="https://www.hackthebox.eu/" target="_blank">Start Challenge 1 on Hack The Box ➡️</a>
+    <a href="submit.html?challenge=1">Submit Flag for Challenge 1 ➡️</a>
+  </div>
+
+  <div class="challenge">
+    <h2>Challenge 2: Easy Web Exploit</h2>
+    <p>Look at the login form. Maybe it’s too easy to bypass?</p>
+    <p><strong>Points:</strong> 100</p>
+    <a href="https://www.hackthebox.eu/" target="_blank">Start Challenge 2 on Hack The Box ➡️</a>
+    <a href="submit.html?challenge=2">Submit Flag for Challenge 2 ➡️</a>
+  </div>
+
+  <div class="challenge">
+    <h2>Challenge 3: Decode the Message</h2>
+    <p>Find the encoded message and reveal the flag!</p>
+    <p><strong>Points:</strong> 150</p>
+    <a href="https://www.hackthebox.eu/" target="_blank">Start Challenge 3 on Hack The Box ➡️</a>
+    <a href="submit.html?challenge=3">Submit Flag for Challenge 3 ➡️</a>
+  </div>
+
+  <a href="index.html">⬅️ Back Home</a>
+</body>
+</html>

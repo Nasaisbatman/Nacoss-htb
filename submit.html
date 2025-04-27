@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Submit Flag - Nacoss HTB Tournament</title>
+  <style>
+    body {
+      background-color: #0f0f0f;
+      color: #00ffea;
+      font-family: monospace;
+      text-align: center;
+      margin-top: 30px;
+    }
+    input, button {
+      margin: 10px;
+      padding: 10px;
+      font-size: 18px;
+      width: 250px;
+    }
+    a {
+      color: #00ffea;
+      display: block;
+      margin-top: 20px;
+    }
+    .result {
+      font-size: 20px;
+      margin-top: 20px;
+    }
+    .correct {
+      color: green;
+    }
+    .wrong {
+      color: red;
+    }
+    @keyframes glitch {
+      0% { text-shadow: 2px 2px 0px #00ffea, -2px -2px 0px #00ffea; }
+      20% { text-shadow: 2px 2px 0px #00ffea, -2px -2px 0px #00ffea; }
+      40% { text-shadow: 5px 5px 0px #00ffea, -5px -5px 0px #00ffea; }
+      60% { text-shadow: -2px -2px 0px #00ffea, 2px 2px 0px #00ffea; }
+      80% { text-shadow: 5px 5px 0px #00ffea, -5px -5px 0px #00ffea; }
+      100% { text-shadow: 2px 2px 0px #00ffea, -2px -2px 0px #00ffea; }
+    }
+    .glitch {
+      animation: glitch 1s infinite linear alternate-reverse;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="glitch">🏁 Submit Your Flag</h1>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const challengeId = urlParams.get('challenge');
+
+    let challengeTitle;
+    let correctFlag;
+
+    const flags = {
+      "1": "HTB{hidden_flag_123}",
+      "2": "HTB{web_exploit_456}",
+      "3": "HTB{decode_message_789}"
+    };
+
+    if (challengeId === "1") {
+      challengeTitle = "Find the Hidden Flag";
+      correctFlag = flags["1"];
+    }
+    if (challengeId === "2") {
+      challengeTitle = "Easy Web Exploit";
+      correctFlag = flags["2"];
+    }
+    if (challengeId === "3") {
+      challengeTitle = "Decode the Message";
+      correctFlag = flags["3"];
+    }
+
+    document.write(`<h2>${challengeTitle}</h2>`);
+
+    function handleSubmit() {
+      const userFlag = document.getElementById("flag-input").value.trim();
+      const resultElement = document.getElementById("result");
+
+      if (userFlag === correctFlag) {
+        resultElement.textContent = "✅ Correct flag!";
+        resultElement.classList.remove("wrong");
+        resultElement.classList.add("correct");
+      } else {
+        resultElement.textContent = "❌ Wrong flag, try again!";
+        resultElement.classList.remove("correct");
+        resultElement.classList.add("wrong");
+      }
+    }
+  </script>
+
+  <form onsubmit="event.preventDefault(); handleSubmit();">
+    <input type="text" id="flag-input" placeholder="Enter your flag here" required><br>
+    <button type="submit">Submit Flag</button>
+  </form>
+
+  <div id="result" class="result"></div>
+
+  <a href="challenges.html">⬅️ Back to Challenges</a>
+</body>
+</html>
